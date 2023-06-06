@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavigatingDL</title>
+    <link rel="stylesheet" href="./dist/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="//unpkg.com/alpinejs" defer></script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+  
+  <!--Nav-->
+  <div class="container mx-auto  px-6 lg:px-8 xl:px-12 sm:max-w-xs lg:max-w-7xl">
+  <div class=" inline-flex flex-col space-y-12 items-center justify-end pt-16 bg-white">
+   <div class="space-y-16 w-72 sm:w-fit">
+  <div class=" inline-flex gap-x-12 items-center justify-between -ml-24 sm:ml-0 left-0">
+    <img src="src/Assets/Frame 9.png" alt="" class="gap-3 mt-2 " >
+
+         <div x-data="{open:false}" class="sm:hidden ml-20">
+            <div class="relative" style="left: 24px;">
+              <button @click="open = !open" class="block h-14 w-14 pt-6">
+                <img class="ml-16 h-20 w-20 -mt-6 object-cover cursor-pointer" src="src/Assets/bars.png" alt="pim">
+              </button>
+              <div x-show="open" class="absolute   bg-white text-black w-32 py-1 left-0 rounded-sm z-10 "
+                style=" display:none; border:4px solid #B9FF66 ; box-shadow: 4px 4px 5px #888888;  ">
+                <a href="#" class="block px-4 py-1 hover:bg-indigo-500 hover:text-white cursor-pointer"
+                  style=" font-size: 15px;"> About Us</a>
+                <a href="#" class="block px-4 py-1 hover:bg-indigo-500 hover:text-white cursor-pointer"
+                  style="font-size: 15px;">Services</a>
+                <a href="#" class="block px-4 py-1 hover:bg-indigo-500 hover:text-white cursor-pointer"
+                  style=" font-size: 15px;">Use Cases</a>
+                <a href="#" class="block px-4 py-1 hover:bg-indigo-500 hover:text-white cursor-pointer"
+                  style=" font-size: 15px;"> Pricing</a>
+                <a href="#" class="block px-4 py-1 hover:bg-indigo-500 hover:text-white cursor-pointer"
+                  style=" font-size: 15px;"> Blog</a>
+
+              </div>
+            </div>
+          </div>    
+    <div class="hidden sm:block ">
+    <ul class="gap-2 xl:gap-10 xl:ml-32 "
+              style="display: flex;flex-direction: row;justify-content: center;align-items: center;padding: 0px;;max-width: 811px;height: 68px;flex: none;order: 1;flex-grow: 0;">
+
+              <li class="gap-10 hidden sm:block mb-4" style="display: flex;flex-direction: row;">
+                <a href="#" class="mt-6 hidden sm:block"
+                  style="max-width: 96px;max-height: 28px;font-family: 'Space Grotesk';font-style: normal;font-weight: 400;font-size: 20px;line-height: 28px;color: #000000;flex: none;order: 0;flex-grow: 0 ;margin-left: 4px;margin-right: 4px;"
+                  class="cursor-pointer ">About Us</u></a>
+                <a href="#" class="mt-6 hidden sm:block"
+                  style="max-width: 82px;max-height: 28px;font-family: 'Space Grotesk';font-style: normal;font-weight: 400;font-size: 20px;line-height: 28px;color: #000000;flex: none;order: 1;flex-grow: 0;margin-left: 4px;margin-right: 4px;"
+                  class="cursor-pointer">Services</a>
+                <a href="#" class="mt-6 hidden sm:block"
+                  style="max-width: 99px;max-height: 28px;font-family: 'Space Grotesk';font-style: normal;font-weight: 400;font-size: 20px;line-height: 28px;color: #000000;flex: none;order: 2;flex-grow: 0;margin-left: 4px;margin-right: 4px;"
+                  class="cursor-pointer"> Use Cases</a>
+                <a href="#" class="mt-6 hidden sm:block"
+                  style="max-width: 67px;max-height: 28px;font-family: 'Space Grotesk';font-style: normal;font-weight: 400;font-size: 20px;line-height: 28px;color: #000000;flex: none;order: 3;flex-grow: 0;margin-left: 4px;margin-right: 4px;"
+                  class="cursor-pointer">Pricing</a>
+                <a href="#" class="mt-6 hidden sm:block"
+                  style="max-width: 44px;max-height: 28px;font-family: 'Space Grotesk';font-style: normal;font-weight: 400;font-size: 20px;line-height: 28px;color: #000000;flex: none;order: 4;flex-grow: 0;margin-left: 4px;margin-right: 4px;"
+                  class="cursor-pointer">Blog</a>
+
+
+              </li>
+
+
+              <button class="hidden sm:block ml-20 xl:ml-16">
+                <div class="hidden sm:block p-4 pr-24 gap-4"
+                  style="box-sizing: border-box;display: flex; flex-direction: row; align-items: center;  border: 1px solid #191A23;border-radius: 14px; flex: none; order: 5;">
+                  <div class="hidden sm:block"
+                    style="font-family: 'Space Grotesk';font-style: normal;font-weight: 400;font-size: 20px;line-height: 28px;text-align: center; color: #000000;flex: none;order: 0;flex-grow: 0;"
+                    class="cursor-pointer">Request a quote</div>
+                </div>
+              </button>
+            </ul></div>
+  </div></div>
+  <!--Navigating-->
+  <div class=" inline-flex items-start justify-between">
+    <div class="space-y-9  ">
+      <p class="text-6xl font-medium " style="display:inline-block;white-space:nowrap;">Navigating the <br> digital landscape <br>for success</p>
+      <div class="sm:hidden ">
+        <img src="src/Assets/Illustration.png" alt="pim" class="w-full h-full" >
+      </div>
+      <p class="text-xl leading-7">Our digital marketing agency helps businesses<br> grow and succeed online through a range of<br> services including SEO, PPC, social media marketing,<br> and content creation.</p>
+      <button class="px-32 sm:px-9 py-5 bg-zinc-900 rounded-2xl inline-flex gap-x-2.5 items-start justify-start w-full sm:w-fit">
+        <span class="text-xl leading-7 text-center text-white">Book a consultation</span>
+      </button>
+    </div>
+  <div class="hidden sm:block -mr-56 lg:mr-0 md:ml-0 xl:ml-36 w-[550px]   flex-grow">
+    <img src="src/Assets/Illustration.png " alt="pim" class="   ">
+  </div>
+  </div>
+  <div class="sm:hidden"
+      style="display: flex; flex-direction: column;align-items: flex-start;padding: 0px;gap: 20px;position: absolute;width: 546.92px;height: 116px; top:1030px;">
+      <img class="sm:hidden" src="src/Assets/Company logo.png" alt=""
+        style="max-width: 104.11px;max-height: 48px; mix-blend-mode: luminosity;flex: none;order: 0;flex-grow: 0; position: absolute;left: 08.82%;right: 60.49%;top: 0%;bottom: 58.62%; ">
+      <img class="sm:hidden" src="src/Assets/Company logo1.png" alt=""
+        style="max-width: 106.37px;max-height: 48px;mix-blend-mode: luminosity;flex: none;order: 1;flex-grow: 0;position: absolute;left: 31.44%;right: 30.45%;top: 0%;bottom: 58.62%;">
+      <img class="sm:hidden" src="src/Assets/Company logo2.png" alt=""
+        style="max-width: 100.63px; max-height: 48px;mix-blend-mode: luminosity;flex: none;order: 2;flex-grow: 0; position: absolute;left: 53.48%;right: 0%;top: 0%;bottom: 58.62%;">
+      <img class="sm:hidden" src="src/Assets/Company logo3.png" alt=""
+        style="max-width: 109.55px; max-height: 48px;mix-blend-mode: luminosity;flex: none;order: 3;flex-grow: 0;position: absolute;left: 19.66%;right: 43.72%;top: 58.62%;bottom: 0%;">
+      <img class="sm:hidden" src="src/Assets/Company logo4 .png" alt=""
+        style="max-width: 95.24px;max-height: 48px;mix-blend-mode: luminosity;flex: none;order: 4;flex-grow: 0; position: absolute;left: -3%;right: 77.1%;top: 58.62%;bottom: 0%;">
+      <img class="sm:hidden" src="src/Assets/Company logo 5.png" alt=""
+        style="max-width: 80.57px;max-height: 48px;mix-blend-mode: luminosity;flex: none;order: 5;flex-grow: 0; position: absolute;left: 44.26%;right: 16.52%;top: 58.62%;bottom: 0%; ">
+    </div>
+  <div class="hidden sm:block mt-8  gap-1 sm:gap-12 xl:gap-20 sm:-pl-8 xl:pl-0 "
+      style="display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start;flex: none;">
+      <img class="hidden sm:block" src="src/Assets/Company logo.png" alt=""
+        style=" mix-blend-mode: luminosity;flex: none;order: 0;flex-grow: 0;">
+      <img class="hidden sm:block" src="src/Assets/Company logo1.png" alt=""
+        style="mix-blend-mode: luminosity;flex: none;order: 1;flex-grow: 0;">
+      <img class="hidden sm:block" src="src/Assets/Company logo2.png" alt=""
+        style="mix-blend-mode: luminosity;flex: none;order: 2;flex-grow: 0;">
+      <img class="hidden sm:block" src="src/Assets/Company logo3.png" alt=""
+        style="mix-blend-mode: luminosity;flex: none;order: 3;flex-grow: 0;">
+      <img class="hidden sm:block" src="src/Assets/Company logo4 .png" alt=""
+        style="mix-blend-mode: luminosity;flex: none;order: 4;flex-grow: 0;">
+      <img class="hidden sm:block" src="src/Assets/Company logo 5.png" alt=""
+        style="mix-blend-mode: luminosity;flex: none;order: 5;flex-grow: 0;">
+    </div>
+</div>
+<!--Services-->
+<div class=" py-14 flex  sm:flex-row flex-col   gap-x-10 items-start justify-start ">
+  <div>
+    <div class=" mt-2 bg-lime-300 ml-28 sm:ml-0 rounded-md space-y-2.5">
+      <div class="">
+      <p class="text-4xl font-medium ">Services</p>
+      </div>
+    </div>
+  </div>
+  <p class="text-lg text-center sm:text-left"style="display:inline-block;white-space:nowrap">At our digital marketing agency, we offer a range<br class="sm:hidden"> of services to <br class="hidden sm:block"> help businesses grow and succeed <br class="sm:hidden"> online. These services include:</p>
+</div>
+<!--Optimizing-->
+<div class="space-y-14   ">
+  <div class=" flex-row sm:inline-flex gap-x-4 xl:gap-x-10 items-start justify-start ">
+    <button class="p-12 bg-zinc-100 shadow border rounded-3xl border-zinc-900 flex gap-x-1 xl:gap-x-20 items-center justify-between w-[500px] sm:w-fit mb-14 sm:mb-0">
+  <div class="inline-flex flex-col gap-y-24 items-start justify-center">
+    <div>
+      <div class="px-1 bg-lime-300 rounded-md space-y-2.5 w-44">
+        <p class="text-2xl font-medium">Search engine</p>
+      </div>
+      <div class="px-1 bg-lime-300 rounded-md space-y-2.5">
+        <p class="text-2xl font-medium">optimization</p>
+      </div>
+    </div>
+    <div class="inline-flex gap-x-4 items-center justify-start">
+      <div class="flex-1 relative">
+        <div class="w-10 h-10 bg-zinc-900 rounded-full"><img src="src/Assets/Icon (4).png" alt="" ></div>
+      </div>
+      <p class="text-xl leading-7 hidden sm:block">Learn more</p>
+    </div>
+  </div>
+  <div class="w-52 h-44 py-0.5 flex items-center justify-center mt-20 sm:mt-0">
+    <img src="src/Assets/Illustration (2).png" class="w-52 h-40" />
+  </div>
+</button>
+    <button class="p-12 bg-lime-300 shadow border rounded-3xl border-zinc-900 flex gap-x-1 xl:gap-20 items-center justify-between flex-shrink w-[500px] sm:w-fit mb-14 sm:mb-0">
+      <div class="space-y-24">
+        <div>
+          <div class="px-1 bg-white rounded-md space-y-2.5 w-44">
+            <p class="text-2xl font-medium">Pay-per-click</p>
+          </div>
+          <div class="px-1 bg-white rounded-md space-y-2.5">
+            <p class="text-2xl font-medium">advertising</p>
+          </div>
+        </div>
+        <div class="inline-flex gap-x-4 items-center justify-start">
+          <div class="flex-1 relative">
+            <div class="w-10 h-10 bg-zinc-900 rounded-full"><img src="src/Assets/Icon (4).png" alt="" ></div>
+          </div>
+          <p class="text-xl leading-7 hidden sm:block">Learn more</p>
+        </div>
+      </div>
+      <div class="w-52 h-36 mt-20 sm:mt-0">
+        <img src="src/Assets/tokyo-selecting-a-value-in-the-browser-window 1.png" class="w-52 h-36" />
+      </div>
+    </button>
+  </div>
+  <div class=" flex-row sm:inline-flex gap-x-4 xl:gap-x-10 items-start justify-start">
+    <button class="p-12 bg-zinc-900 shadow border rounded-3xl border-zinc-900 flex gap-x-1 xl:gap-x-20 items-center justify-between w-[500px] sm:w-fit mb-14 sm:mb-0" >
+  <div class="inline-flex flex-col gap-y-24 items-start justify-center">
+    <div>
+      <div class="px-1 bg-white rounded-md space-y-2.5 w-44">
+        <p class="text-2xl font-medium">Social Media</p>
+      </div>
+      <div class="px-1 bg-white rounded-md space-y-2.5">
+        <p class="text-2xl font-medium">Marketing</p>
+      </div>
+    </div>
+    <div class="inline-flex gap-x-4 items-center justify-start">
+      <div class="flex-1 relative">
+        <div class="w-10 h-10  rounded-full"><img src="src/Assets/Icon (5).png" alt="" ></div>
+      </div>
+      <p class="text-xl leading-7 text-white hidden sm:block">Learn more</p>
+    </div>
+  </div>
+  <div class="w-52 h-44 py-0.5 flex items-center justify-center mt-20 sm:mt-0">
+    <img src="src/Assets/tokyo-browser-window-with-emoticon-likes-and-stars-around 2.png" class="w-52 h-40" />
+  </div>
+</button>
+    <button class="p-12 bg-zinc-100 shadow border rounded-3xl border-zinc-900 flex gap-x-1 xl:gap-x-20 items-center justify-between w-[500px] sm:w-fit mb-14 sm:mb-0">
+      <div class="space-y-24">
+        <div>
+          <div class="px-1 bg-lime-300 rounded-md space-y-2.5 ">
+            <p class="text-2xl font-medium">Email</p>
+          </div>
+          <div class="px-1 bg-lime-300 rounded-md space-y-2.5 w-44 ">
+            <p class="text-2xl font-medium">Marketing</p>
+          </div>
+        </div>
+        <div class="inline-flex gap-x-4 items-center justify-start">
+          <div class="flex-1 relative">
+            <div class="w-10 h-10 bg-zinc-900 rounded-full"><img src="src/Assets/Icon (4).png" alt="" ></div>
+          </div>
+          <p class="text-xl leading-7 hidden sm:block">Learn more</p>
+        </div>
+      </div>
+      <div class="w-52 h-36 mt-20 sm:mt-0">
+        <img src="src/Assets/tokyo-sending-messages-from-one-place-to-another 1.png" class="w-52 h-36" />
+      </div>
+    </button>
+  </div><!---->
+  <div class=" flex-row sm:inline-flex gap-x-4 xl:gap-x-10 items-start justify-start ">
+    <button class="p-12 bg-lime-300 shadow border rounded-3xl border-zinc-900 flex gap-x-1 xl:gap-x-20 items-center justify-between w-[500px]sm:w-fit mb-14 sm:mb-0">
+  <div class="inline-flex flex-col gap-y-24 items-start justify-center">
+    <div>
+      <div class="px-1 bg-white rounded-md space-y-2.5 w-44">
+        <p class="text-2xl font-medium">Content</p>
+      </div>
+      <div class="px-1 bg-white rounded-md space-y-2.5">
+        <p class="text-2xl font-medium">Creation</p>
+      </div>
+    </div>
+    <div class="inline-flex gap-x-4 items-center justify-start">
+      <div class="flex-1 relative">
+        <div class="w-10 h-10 bg-zinc-900 rounded-full"><img src="src/Assets/Icon (4).png" alt="" ></div>
+      </div>
+      <p class="text-xl leading-7 hidden sm:block">Learn more</p>
+    </div>
+  </div>
+  <div class="w-52 h-44 py-0.5 flex items-center justify-center mt-20 sm:mt-0">
+    <img src="src/Assets/Illustration 4.png" class="w-52 h-40" />
+  </div>
+</button>
+    <button class="p-12 bg-zinc-900 shadow border rounded-3xl border-zinc-900 flex gap-x-1 xl:gap-x-20 items-center justify-betweenw-[500px] sm:w-fit mb-14 sm:mb-0">
+      <div class="space-y-24">
+        <div>
+          <div class="px-1 bg-lime-300 rounded-md space-y-2.5 w-44">
+            <p class="text-2xl font-medium">Pay-per-click</p>
+          </div>
+          <div class="px-1 bg-lime-300 rounded-md space-y-2.5">
+            <p class="text-2xl font-medium">advertising</p>
+          </div>
+        </div>
+        <div class="inline-flex gap-x-4 items-center justify-start">
+          <div class="flex-1 relative">
+            <div class="w-10 h-10  rounded-full"><img src="src/Assets/Icon (5).png" alt="" ></div>
+          </div>
+          <p class="text-xl text-white leading-7 hidden sm:block">Learn more</p>
+        </div>
+      </div>
+      <div class="w-52 h-36 mt-20 sm:mt-0">
+        <img src="src/Assets/tokyo-volumetric-analytics-of-different-types-in-web-browsers 2.png" class="w-52 h-36" />
+      </div>
+    </button>
+  </div></div>
+  
+<!--Lets-->
+<div>
+<div class=" mt-20 px-20 sm:px-16 bg-zinc-100 my-20 rounded-3xl  flex items-center justify-start w-[500px] sm:w-[385%] lg:w-[110%] xl:w-[107%]  max-h-80">
+  <div class="sm:px-16 my-20 rounded-3xl  flex items-center justify-start  max-h-80">
+    <div class="space-y-6"style="display:inline-block;white-space:nowrap;">
+      <p class="text-3xl font-medium">Let’s make things <br class="sm:hidden"> happen</p>
+      <p class="text-lg">Contact us today to learn more<br class="sm:hidden">  about how our digital <br class="hidden sm:block"> marketing<br class="sm:hidden"> services can help your business grow<br class="sm:hidden"> and <br class="hidden sm:block"> succeed online.</p>
+      <button class="px-9 py-5 bg-zinc-900 rounded-2xl inline-flex gap-x-2.5 items-start justify-start">
+        <span class="text-xl leading-7 text-center text-white">Get your free proposal</span>
+      </button>
+    </div>
+    </div>
+    
+      
+       
+    <img  src="src/Assets/Frame 19.png" alt="" class="h-96 ml-10 xl:ml-40 hidden sm:block ">
+    
+  </div>
+  
+  
+</div>
+<!--Case-->
+<div class="  flex sm:flex-row flex-col  gap-x-10 items-start justify-start">
+  <div>
+    <div class="px-1.5 bg-lime-300 ml-20 sm:ml-0 rounded-md space-y-2.5 mt-2">
+      <p class="text-4xl font-medium "style="display:inline-block;white-space:nowrap;">Case Studies</p>
+    </div>
+  </div>
+  <p class="text-lg text-center sm:text-left "style="display:inline-block;white-space:nowrap;">Explore Real-Life Examples of Our Proven Digital<br class="sm:hidden"> Marketing<br class="hidden sm:block"> Success through Our Case Studies</p>
+</div>
+<!--LearnMore-->
+<div class=" space-y-2.5 ">
+  <div class=" px-2 xl:px-10 py-16 sm:bg-zinc-900 rounded-3xl inline-flex gap-x-16 items-start justify-start w-[94%] sm:w-[385%] lg:w-[110%] xl:w-[107%]  h-96 pt-20 pl-12 xl:pl-20 my-9">
+  <div class="inline-flex items-start justify-start">
+    <div class="space-y-5 bg-zinc-900 sm:bg-transparent rounded-3xl p-20 sm:p-0 -ml-10 sm:ml-0 h-96 sm:h-96">
+      <p class="text-lg text-white w-56 xl:w-72">For a local restaurant, we implemented a targeted PPC campaign that resulted in a 50% increase in website traffic and a 25% increase in sales.</p>
+      <div class="inline-flex gap-x-4 items-center justify-start">
+        <p class="text-xl leading-7 text-lime-300  ">Learn more</p>
+        <img src="src/Assets/Icon (3).png" alt="pim">
+        
+
+        
+      </div>
+      <img class="ml-64 xl:ml-80 -mt-22 w-1 mx-20 -top-56 xl:-top-52  h-52 relative hidden sm:block" src="src/Assets/Line 3.png" alt="">
+    </div>
+    
+    <div class="space-y-5 bg-zinc-900 sm:bg-transparent rounded-l-3xl p-16 sm:p-0 w-[0.2%] sm:w-fit overflow-hidden ml-20 sm:ml-0 h-96 sm:h-fit">
+      <p class="text-lg text-white w-56 xl:w-72 hidden sm:block">For a B2B software company, we developed an SEO strategy that resulted in a first page ranking for key keywords and a 200% increase in organic traffic.</p>
+      <div class="inline-flex gap-x-4 items-center justify-start">
+        <p class="text-xl leading-7 text-lime-300 hidden sm:block">Learn more</p>
+        <img src="src/Assets/Icon (3).png" alt="pim" >
+      </div>
+      <img class="ml-64 xl:ml-80 -mt-22 w-1 mx-20  -top-56 xl:-top-52  h-52 relative hidden sm:block" src="src/Assets/Line 3.png" alt="">
+    </div>
+    <div class="space-y-5 bg-zinc-900 sm:bg-transparent after:rounded-3xl p-16 sm:p-0 hidden sm:block">
+      <p class="text-lg text-white w-56 xl:w-72">For a national retail chain, we created a social media marketing campaign that increased followers by 25% and generated a 20% increase in online sales.</p>
+      <div class="inline-flex gap-x-4 items-center justify-start">
+        <p class="text-xl leading-7 text-lime-300">Learn more</p>
+        <img src="src/Assets/Icon (3).png" alt="pim " >
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+</div>
+<!--Our Working-->
+
+<div class="py-20 flex sm:flex-row flex-col  gap-x-10 items-start justify-start mt-9 sm:mt-0">
+  <div>
+    <div class="px-1.5 bg-lime-300 ml-10 sm:ml-0 rounded-md space-y-2.5">
+      <p class="text-3xl sm:text-4xl font-medium text-center sm:text-left"style="display:inline-block;white-space:nowrap;">Our Working Process </p>
+    </div>
+  </div>
+  <p class="text-lg w-72 text-center sm:text-left" style="display:inline-block;white-space:nowrap;">Step-by-Step Guide to Achieving<br class="hidden sm:block"> Your Business Goals</p>
+</div>
+<!--Consultation-->
+<div class= ""
+style="display: flex;flex-direction: column;align-items: flex-start;position: relative; ">
+
+
+<div class=" w-[500px] sm:w-[385%] lg:w-[110%] xl:w-[106%]"
+  style="display: flex; flex-direction: column; align-items: flex-start;gap: 30px; position: relative;">
+
+  <div x-data="{open:false}" :class="open ? 'bg-[#B9FF66]' : 'bg-[#F3F3F3]'"
+    class="px-4 sm:px-16 py-10 transition-colors ease-in-out duration-200  shadow border rounded-3xl border-zinc-900 space-y-8 gap-1 p-12 "
+    style="box-sizing: border-box;display: flex;flex-direction: column;align-items: flex-start;border: 1px solid #191A23;box-shadow: 0px 5px 0px #191A23;border-radius: 45px;flex: none;order: 0;flex-grow: 0;width: 100%;">
+    <div class="inline-flex flex-col gap-x-80 w-full items-center justify-between">
+      <div class="flex justify-between w-full items-center">
+        <div class="flex gap-x-6 items-center justify-start mb-4 gap-4">
+          <p class="text-3xl sm:text-6xl font-medium"
+            style=" font-family: 'Space Grotesk';font-style: normal;font-weight: 500;font-size: 60px;line-height: 75px;color: #000000;flex: none;order: 0;flex-grow: 0;">
+            01</p>
+          <p class="text-lg sm:text-3xl font-medium mt-6"
+            style="font-family: 'Space Grotesk';font-style: normal;font-weight: 500;font-size: 30px;line-height: 38px;color: #000000;flex: none;order: 1; flex-grow: 0;">
+            Consultation</p>
+        </div>
+        <div class="" style="margin-left: auto;">
+
+
+          <svg @click="open = true" x-show="!open" width="58" height="59" viewBox="0 0 58 59" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <circle cx="29" cy="29.5" r="28.5" fill="#F3F3F3" stroke="#191A23" />
+            <path d="M25.6 41.58V31.86H16V26.22H25.6V16.5H31.48V26.22H41.08V31.86H31.48V41.58H25.6Z"
+              fill="#191A23" />
+          </svg>
+
+          <svg x-show="open" @click="open = false" width="58" height="59" viewBox="0 0 58 59" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <circle cx="29" cy="29.5" r="28.5" fill="#F3F3F3" stroke="#191A23" />
+            <path d="M20 32.14V26.5H37.76V32.14H20Z" fill="black" />
+          </svg>
+
+        </div>
+      </div>
+
+      <div x-show="open" x-cloak>
+        <div class="relative">
+          <div class="w-full h-14 bg-zinc-100 border rounded-full border-zinc-900 "
+            style=" height: 0px; border: 1px solid #000000; flex: none;order: 1;flex-grow: 0;">
+          </div>
+        </div>
+
+
+        <p id="" class="text-lg mt-2" style="font-family: 'Space Grotesk';font-style: normal;font-weight: 400;">
+          During the
+          initial consultation, we will discuss your business goals and objectives, target audience, and current
+          marketing efforts. This will allow us to understand your needs and tailor our services to best fit your
+          requirements.</p>
+      </div>
+
+
+    </div>
+
+  </div>
+  <!--2-->
+  <div x-data="{open:false}" :class="open ? 'bg-[#B9FF66]' : 'bg-[#F3F3F3]'"
+    class="px-4 sm:px-16 py-10 transition-colors ease-in-out duration-200  shadow border rounded-3xl border-zinc-900 space-y-8 gap-1 p-12"
+    style="box-sizing: border-box;display: flex;flex-direction: column;align-items: flex-start;border: 1px solid #191A23;box-shadow: 0px 5px 0px #191A23;border-radius: 45px;flex: none;order: 0;flex-grow: 0;width: 100%;">
+    <div class="inline-flex flex-col gap-x-80 w-full items-center justify-between">
+      <div class="flex justify-between w-full items-center">
+        <div class="flex gap-x-6 items-center justify-start mb-4 gap-4">
+          <p class="text-3xl sm:text-6xl font-medium"
+            style=" font-family: 'Space Grotesk';font-style: normal;font-weight: 500;font-size: 60px;line-height: 75px;color: #000000;flex: none;order: 0;flex-grow: 0;">
+            02</p>
+          <p class="text-lg sm:text-3xl font-medium mt-6"
+            style="font-family: 'Space Grotesk';font-style: normal;font-weight: 500;font-size: 30px;line-height: 38px;color: #000000;flex: none;order: 1; flex-grow: 0;">
+            Research and <br class="sm:hidden"> Strategy  Development</p>
+        </div>
+        <div class="" style="margin-left: auto;">
+
+
+          <svg @click="open = true" x-show="!open" width="58" height="59" viewBox="0 0 58 59" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <circle cx="29" cy="29.5" r="28.5" fill="#F3F3F3" stroke="#191A23" />
+            <path d="M25.6 41.58V31.86H16V26.22H25.6V16.5H31.48V26.22H41.08V31.86H31.48V41.58H25.6Z"
+              fill="#191A23" />
+          </svg>
+
+          <svg x-show="open" @click="open = false" width="58" height="59" viewBox="0 0 58 59" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <circle cx="29" cy="29.5" r="28.5" fill="#F3F3F3" stroke="#191A23" />
+            <path d="M20 32.14V26.5H37.76V32.14H20Z" fill="black" />
+          </svg>
+
+        </div>
+      </div>
+
+      <div x-show="open" x-cloak>
+        <div class="relative">
+          <div class="w-full h-14 bg-zinc-100 border rounded-full border-zinc-900"
+            style=" height: 0px; border: 1px solid #000000; flex: none;order: 1;flex-grow: 0;">
+          </div>
+        </div>
+
+
+        <p id="" class="text-lg mt-2" style="font-family: 'Space Grotesk';font-style: normal;font-weight: 400;">
+          During the
+          initial consultation, we will discuss your business goals and objectives, target audience, and current
+          marketing efforts. This will allow us to understand your needs and tailor our services to best fit your
+          requirements.</p>
+      </div>
+
+
+    </div>
+
+  </div>
+  <!--3-->
+  <div x-data="{open:false}" :class="open ? 'bg-[#B9FF66]' : 'bg-[#F3F3F3]'"
+    class="px-4 sm:px-16 py-10 transition-colors ease-in-out duration-200  shadow border rounded-3xl border-zinc-900 space-y-8 gap-1 p-12"
+    style="box-sizing: border-box;display: flex;flex-direction: column;align-items: flex-start;border: 1px solid #191A23;box-shadow: 0px 5px 0px #191A23;border-radius: 45px;flex: none;order: 0;flex-grow: 0;width: 100%;">
+    <div class="inline-flex flex-col gap-x-80 w-full items-center justify-between">
+      <div class="flex justify-between w-full items-center">
+        <div class="flex gap-x-6 items-center justify-start mb-4 gap-4">
+          <p class="text-3xl sm:text-6xl font-medium"
+            style=" font-family: 'Space Grotesk';font-style: normal;font-weight: 500;font-size: 60px;line-height: 75px;color: #000000;flex: none;order: 0;flex-grow: 0;">
+            03</p>
+          <p class="text-lg sm:text-3xl font-medium mt-6"
+            style="font-family: 'Space Grotesk';font-style: normal;font-weight: 500;font-size: 30px;line-height: 38px;color: #000000;flex: none;order: 1; flex-grow: 0;">
+            Implementation</p>
+        </div>
+        <div class="" style="margin-left: auto;">
+
+
+          <svg @click="open = true" x-show="!open" width="58" height="59" viewBox="0 0 58 59" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <circle cx="29" cy="29.5" r="28.5" fill="#F3F3F3" stroke="#191A23" />
+            <path d="M25.6 41.58V31.86H16V26.22H25.6V16.5H31.48V26.22H41.08V31.86H31.48V41.58H25.6Z"
+              fill="#191A23" />
+          </svg>
+
+          <svg x-show="open" @click="open = false" width="58" height="59" viewBox="0 0 58 59" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <circle cx="29" cy="29.5" r="28.5" fill="#F3F3F3" stroke="#191A23" />
+            <path d="M20 32.14V26.5H37.76V32.14H20Z" fill="black" />
+          </svg>
+
+        </div>
+      </div>
+
+      <div x-show="open" x-cloak>
+        <div class="relative">
+          <div class="w-full h-14 bg-zinc-100 border rounded-full border-zinc-900"
+            style=" height: 0px; border: 1px solid #000000; flex: none;order: 1;flex-grow: 0;">
+          </div>
+        </div>
+
+
+        <p id="" class="text-lg mt-2" style="font-family: 'Space Grotesk';font-style: normal;font-weight: 400;">
+          During the
+          initial consultation, we will discuss your business goals and objectives, target audience, and current
+          marketing efforts. This will allow us to understand your needs and tailor our services to best fit your
+          requirements.</p>
+      </div>
+
+
+    </div>
+
+  </div>
+  <!--4-->
+  <div x-data="{open:false}" :class="open ? 'bg-[#B9FF66]' : 'bg-[#F3F3F3]'"
+    class="px-4 sm:px-16 py-10 transition-colors ease-in-out duration-200  shadow border rounded-3xl border-zinc-900 space-y-8 gap-1 p-12"
+    style="box-sizing: border-box;display: flex;flex-direction: column;align-items: flex-start;border: 1px solid #191A23;box-shadow: 0px 5px 0px #191A23;border-radius: 45px;flex: none;order: 0;flex-grow: 0;width: 100%;">
+    <div class="inline-flex flex-col gap-x-80 w-full items-center justify-between">
+      <div class="flex justify-between w-full items-center">
+        <div class="flex gap-x-6 items-center justify-start mb-4 gap-4">
+          <p class="text-3xl sm:text-6xl font-medium"
+            style=" font-family: 'Space Grotesk';font-style: normal;font-weight: 500;font-size: 60px;line-height: 75px;color: #000000;flex: none;order: 0;flex-grow: 0;">
+            04</p>
+          <p class="text-lg sm:text-3xl font-medium mt-6"
+            style="font-family: 'Space Grotesk';font-style: normal;font-weight: 500;font-size: 30px;line-height: 38px;color: #000000;flex: none;order: 1; flex-grow: 0;">
+            Monitoring and <br class="sm:hidden"> Optimization</p>
+        </div>
+        <div class="" style="margin-left: auto;">
+
+
+          <svg @click="open = true" x-show="!open" width="58" height="59" viewBox="0 0 58 59" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <circle cx="29" cy="29.5" r="28.5" fill="#F3F3F3" stroke="#191A23" />
+            <path d="M25.6 41.58V31.86H16V26.22H25.6V16.5H31.48V26.22H41.08V31.86H31.48V41.58H25.6Z"
+              fill="#191A23" />
+          </svg>
+
+          <svg x-show="open" @click="open = false" width="58" height="59" viewBox="0 0 58 59" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <circle cx="29" cy="29.5" r="28.5" fill="#F3F3F3" stroke="#191A23" />
+            <path d="M20 32.14V26.5H37.76V32.14H20Z" fill="black" />
+          </svg>
+
+        </div>
+      </div>
+
+      <div x-show="open" x-cloak>
+        <div class="relative">
+          <div class="w-full h-14 bg-zinc-100 border rounded-full border-zinc-900"
+            style=" height: 0px; border: 1px solid #000000; flex: none;order: 1;flex-grow: 0;">
+          </div>
+        </div>
+
+
+        <p id="" class="text-lg mt-2" style="font-family: 'Space Grotesk';font-style: normal;font-weight: 400;">
+          During the
+          initial consultation, we will discuss your business goals and objectives, target audience, and current
+          marketing efforts. This will allow us to understand your needs and tailor our services to best fit your
+          requirements.</p>
+      </div>
+
+
+    </div>
+
+  </div>
+  <!--5-->
+  <div x-data="{open:false}" :class="open ? 'bg-[#B9FF66]' : 'bg-[#F3F3F3]'"
+    class="px-4 sm:px-16 py-10 transition-colors ease-in-out duration-200  shadow border rounded-3xl border-zinc-900 space-y-8 gap-1 p-12"
+    style="box-sizing: border-box;display: flex;flex-direction: column;align-items: flex-start;border: 1px solid #191A23;box-shadow: 0px 5px 0px #191A23;border-radius: 45px;flex: none;order: 0;flex-grow: 0;width: 100%;">
+    <div class="inline-flex flex-col gap-x-80 w-full items-center justify-between">
+      <div class="flex justify-between w-full items-center">
+        <div class="flex gap-x-6 items-center justify-start mb-4 gap-4">
+          <p class="text-3xl sm:text-6xl font-medium"
+            style=" font-family: 'Space Grotesk';font-style: normal;font-weight: 500;font-size: 60px;line-height: 75px;color: #000000;flex: none;order: 0;flex-grow: 0;">
+            05</p>
+          <p class="text-lg sm:text-3xl font-medium mt-6"
+            style="font-family: 'Space Grotesk';font-style: normal;font-weight: 500;font-size: 30px;line-height: 38px;color: #000000;flex: none;order: 1; flex-grow: 0;">
+            Reporting and <br class="sm:hidden"> Communication</p>
+        </div>
+        <div class="" style="margin-left: auto;">
+
+
+          <svg @click="open = true" x-show="!open" width="58" height="59" viewBox="0 0 58 59" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <circle cx="29" cy="29.5" r="28.5" fill="#F3F3F3" stroke="#191A23" />
+            <path d="M25.6 41.58V31.86H16V26.22H25.6V16.5H31.48V26.22H41.08V31.86H31.48V41.58H25.6Z"
+              fill="#191A23" />
+          </svg>
+
+          <svg x-show="open" @click="open = false" width="58" height="59" viewBox="0 0 58 59" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <circle cx="29" cy="29.5" r="28.5" fill="#F3F3F3" stroke="#191A23" />
+            <path d="M20 32.14V26.5H37.76V32.14H20Z" fill="black" />
+          </svg>
+
+        </div>
+      </div>
+
+      <div x-show="open" x-cloak>
+        <div class="relative">
+          <div class="w-full h-14 bg-zinc-100 border rounded-full border-zinc-900"
+            style=" height: 0px; border: 1px solid #000000; flex: none;order: 1;flex-grow: 0;">
+          </div>
+        </div>
+
+
+        <p id="" class="text-lg mt-2" style="font-family: 'Space Grotesk';font-style: normal;font-weight: 400;">
+          During the
+          initial consultation, we will discuss your business goals and objectives, target audience, and current
+          marketing efforts. This will allow us to understand your needs and tailor our services to best fit your
+          requirements.</p>
+      </div>
+
+
+    </div>
+
+  </div>
+  <!--6-->
+  <div x-data="{open:false}" :class="open ? 'bg-[#B9FF66]' : 'bg-[#F3F3F3]'"
+    class="px-4 sm:px-16 py-10 transition-colors ease-in-out duration-200  shadow border rounded-3xl border-zinc-900 space-y-8 gap-1 p-12"
+    style="box-sizing: border-box;display: flex;flex-direction: column;align-items: flex-start;border: 1px solid #191A23;box-shadow: 0px 5px 0px #191A23;border-radius: 45px;flex: none;order: 0;flex-grow: 0;width: 100%;">
+    <div class="inline-flex flex-col gap-x-80 w-full items-center justify-between">
+      <div class="flex justify-between w-full items-center">
+        <div class="flex gap-x-6 items-center justify-start mb-4 gap-4">
+          <p class="text-3xl sm:text-6xl font-medium"
+            style=" font-family: 'Space Grotesk';font-style: normal;font-weight: 500;font-size: 60px;line-height: 75px;color: #000000;flex: none;order: 0;flex-grow: 0;">
+            06</p>
+          <p class="text-lg sm:text-3xl font-medium mt-6"
+            style="font-family: 'Space Grotesk';font-style: normal;font-weight: 500;font-size: 30px;line-height: 38px;color: #000000;flex: none;order: 1; flex-grow: 0;">
+            Continual <br class="sm:hidden"> Improvement</p>
+        </div>
+        <div class="" style="margin-left: auto;">
+
+
+          <svg @click="open = true" x-show="!open" width="58" height="59" viewBox="0 0 58 59" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <circle cx="29" cy="29.5" r="28.5" fill="#F3F3F3" stroke="#191A23" />
+            <path d="M25.6 41.58V31.86H16V26.22H25.6V16.5H31.48V26.22H41.08V31.86H31.48V41.58H25.6Z"
+              fill="#191A23" />
+          </svg>
+
+          <svg x-show="open" @click="open = false" width="58" height="59" viewBox="0 0 58 59" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <circle cx="29" cy="29.5" r="28.5" fill="#F3F3F3" stroke="#191A23" />
+            <path d="M20 32.14V26.5H37.76V32.14H20Z" fill="black" />
+          </svg>
+
+        </div>
+      </div>
+
+      <div x-show="open" x-cloak>
+        <div class="relative">
+          <div class="w-full h-14 bg-zinc-100 border rounded-full border-zinc-900"
+            style=" height: 0px; border: 1px solid #000000; flex: none;order: 1;flex-grow: 0;">
+          </div>
+        </div>
+
+
+        <p id="" class="text-lg mt-2" style="font-family: 'Space Grotesk';font-style: normal;font-weight: 400;">
+          During the
+          initial consultation, we will discuss your business goals and objectives, target audience, and current
+          marketing efforts. This will allow us to understand your needs and tailor our services to best fit your
+          requirements.</p>
+      </div>
+
+
+    </div>
+
+  </div>
+
+</div>
+</div>
+<!--Team-->
+<div class=" py-20 flex sm:flex-row flex-col  gap-x-10 items-start justify-start  relative ">
+  <div>
+    <div class="px-1.5 bg-lime-300 ml-28 sm:ml-0 rounded-md space-y-2.5">
+      <p class="text-4xl font-medium">Team</p>
+    </div>
+  </div>
+  <p class="text-lg text-center sm:text-left"style="display:inline-block;white-space:nowrap;">Meet the skilled and experienced team behind <br> our successful digital marketing strategies</p>
+</div>
+<!--Jane-->
+<div class="space-y-6   ">
+  
+    <div class="flex-row sm:inline-flex gap-x-20 xl:gap-x-10 items-start justify-start w-[500px] sm:w-[385%] lg:w-[110%] xl:w-[107%] sm:mb-4">
+    <div class="px-20 sm:px-4   py-5 bg-white shadow border rounded-3xl border-zinc-900 space-y-2.5 max-w-96 mb-6 sm:mb-0   ">
+      <div class="space-y-7 sm:pl-10 xl:pl-0">
+        <div class="w-full inline-flex items-start justify-start">
+          <div class="flex-1  flex gap-x-10 items-end justify-start">
+            <div class="relative">
+              <div class="absolute left-0 top-0 relative">
+                <img class="w-40 h-24 relative left-0 top-0 " src="src/Assets/Picture (1).png" alt="pim">
+              </div>
+            </div>
+            <div class="w-48 h-20 relative">
+              <p class="text-xl font-medium ">John Smith</p>
+              <p class="text-lg">CEO and Founder</p>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="w-8 h-8 bg-black rounded-full"><img src="src/Assets/Social icon.png" alt="pim"></div>
+          </div>
+        </div>
+        <div class="w-80 h-0.5 border-black"><img src="src/Assets/Line 3 (1).png" alt="pim"></div>
+        <p class="text-lg w-80 pb-7">10+ years of experience in digital<br> marketing. Expertise in SEO, PPC,<br> and content strategy</p>
+      </div>
+    </div>
+    <div class="px-20 sm:px-4 py-5 bg-white shadow border rounded-3xl border-zinc-900 space-y-2.5  max-w-96">
+      <div class="space-y-7 sm:pl-10 xl:pl-0">
+        <div class="w-full inline-flex items-start justify-start">
+          <div class="flex-1  flex  gap-x-10 items-end justify-start">
+            <div class="relative">
+              <div class="absolute left-0 top-0 relative">
+                <img class="w-40 h-24 relative left-0 top-0 " src="src/Assets/Picture (2).png" alt="pim">
+              </div>
+            </div>
+            <div class="w-48 h-12 relative">
+              <p class="text-xl font-medium -mt-6">Jane Doe</p>
+              <p class="text-lg w-full">Director of Operations</p>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="w-8 h-8 bg-black rounded-full"><img src="src/Assets/Social icon.png" alt="pim"></div>
+          </div>
+        </div>
+        <div class="w-80 h-0.5 border-black"><img src="src/Assets/Line 3 (1).png" alt="pim"></div>
+        <p class="text-lg w-80">7+ years of experience in project management and team leadership. Strong organizational and communication skills</p>
+      </div>
+    </div>
+    <div class="px-4 py-5 bg-white shadow border rounded-3xl border-zinc-900 space-y-2.5 hidden max-w-96 xl:block">
+      <div class="space-y-7 sm:pl-10 xl:pl-0">
+        <div class="w-full inline-flex items-start justify-start">
+          <div class="flex-1  flex gap-x-10 items-end justify-start">
+            <div class="relative">
+              <div class="absolute left-0 top-0 relative">
+                <img class="w-40 h-24 relative left-0 top-0 " src="src/Assets/Picture (3).png" alt="pim">
+              </div>
+            </div>
+            <div class="w-48 h-20 relative">
+              <p class="text-xl font-medium">Michael Brown</p>
+              <p class="text-lg">Senior SEO Specialist</p>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="w-8 h-8 bg-black rounded-full"><img src="src/Assets/Social icon.png" alt="pim"></div>
+          </div>
+        </div>
+        <div class="w-80 h-0.5 border-black"><img src="src/Assets/Line 3 (1).png" alt="pim"></div>
+        <p class="text-lg w-80">5+ years of experience in SEO and content creation. Proficient in keyword research and on-page optimization</p>
+      </div>
+    </div></div>
+
+  
+  <div class=" flex-row sm:inline-flex gap-x-20 xl:gap-x-10 items-start justify-start w-[500px] sm:w-[385%] lg:w-[110%] xl:w-[107%]">
+    <div class="px-20 sm:px-4 py-5 bg-white shadow border rounded-3xl border-zinc-900 space-y-2.5 max-w-96 mb-6 sm:mb-0 ">
+      <div class="space-y-7 sm:pl-10 xl:pl-0">
+        <div class="w-full inline-flex items-start justify-start">
+          <div class="flex-1  flex gap-x-10 items-end justify-start">
+            <div class="relative">
+              <div class="absolute left-0 top-0 relative">
+                <img class="w-40 h-24 relative left-0 top-0 " src="src/Assets/Picture (4).png" alt="pim">
+              </div>
+            </div>
+            <div class="w-48 h-20 relative">
+              <p class="text-xl font-medium">Emily Johnson</p>
+              <p class="text-lg">PPC Manager</p>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="w-8 h-8 bg-black rounded-full"> <img src="src/Assets/Social icon.png" alt="pim"></div>
+          </div>
+        </div>
+        <div class="w-80 h-0.5 border-black"><img src="src/Assets/Line 3 (1).png" alt="pim"></div>
+        <p class="text-lg w-80">3+ years of experience in paid search advertising. Skilled in campaign management and performance <br> analysis</p>
+      </div>
+    </div>
+    <div class="px-20 sm:px-4 py-5 bg-white shadow border rounded-3xl border-zinc-900 space-y-2.5 max-w-96 ">
+      <div class="space-y-7 sm:pl-10 xl:pl-0">
+        <div class="w-full inline-flex items-start justify-start">
+          <div class="flex-1  flex gap-x-10 items-end justify-start">
+            <div class="relative">
+              <div class="absolute left-0 top-0 relative">
+                <img class="w-40 h-24 relative left-0 top-0 " src="src/Assets/Picture (5).png" alt="pim">
+              </div>
+            </div>
+            <div class="w-48 h-20 relative">
+              <p class="text-xl font-medium">Brian Williams</p>
+              <p class="text-lg w-full">Social Media Specialist</p>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="w-8 h-8 bg-black rounded-full"><img src="src/Assets/Social icon.png" alt="pim"></div>
+          </div>
+        </div>
+        <div class="w-80 h-0.5 border-black"><img src="src/Assets/Line 3 (1).png" alt="pim"></div>
+        <p class="text-lg w-80">4+ years of experience in social media marketing. Proficient in creating and scheduling content, analyzing metrics, and building engagement</p>
+      </div>
+    </div>
+    <div class="px-4 py-5 bg-white shadow border rounded-3xl border-zinc-900 space-y-2.5 max-w-96 hidden xl:block ">
+      <div class="space-y-7 sm:pl-10 xl:pl-0">
+        <div class="w-full inline-flex items-start justify-start">
+          <div class="flex-1  flex gap-x-10 items-end justify-start">
+            <div class="relative">
+              <div class="absolute left-0 top-0 relative">
+                <img class="w-40 h-24 relative left-0 top-0 " src="src/Assets/Picture (6).png" alt="pim">
+              </div>
+            </div>
+            <div class="w-48 h-20 relative">
+            
+              <p class="text-xl font-medium">Sarah Kim</p>
+              <p class="text-lg w-full">Content Creator</p>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="w-8 h-8 bg-black rounded-full"><img src="src/Assets/Social icon.png" alt="pim"></div>
+          </div>
+        </div>
+        <div class="w-80 h-0.5 border-black"><img src="src/Assets/Line 3 (1).png" alt="pim"></div>
+        <p class="text-lg w-80 pb-7">2+ years of experience in writing and editingSkilled in creating compelling, SEO-optimized content for various industries</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Testimonials-->
+<div class=" py-20 flex sm:flex-row flex-col  gap-x-10 items-start justify-start">
+  <div>
+    <div class="px-1.5 bg-lime-300 ml-20 sm:ml-0 rounded-md space-y-2.5">
+      <p class="text-4xl font-medium">Testimonials</p>
+    </div>
+  </div>
+  <p class="text-lg text-center sm:text-left"style="display:inline-block;white-space:nowrap;">Hear from Our Satisfied Clients: Read Our<br class="sm:hidden"> Testimonials <br class="hidden sm:block"> to Learn More about Our Digital <br class="sm:hidden"> Marketing Services</p>
+</div>
+<!--Chat-->
+<style>
+  body{
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  div.chatBubble {
+      background-color:#191A23;
+      
+      padding: 20px;
+      border-radius: 40px;
+      position: relative;
+      box-shadow: 0 0 2px 1px #B9FF66;
+  }
+
+  div.chatBubble p {
+      margin: 0;
+      font-size: 18px;
+      text-align: justify;
+  }
+
+  div.chatBubble::before {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      right: calc(76% );
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-top: 20px solid #191A23;
+      filter: drop-shadow(0.5px 2px 1px #B9FF66);
+  }
+  
+</style>
+<div class=" space-y-2.5 ">
+  <div class="px-16 pt-20 pb-16 bg-[#191A23] rounded-3xl inline-flex items-end justify-start  w-[500px] sm:w-[385%] lg:w-[110%] xl:w-[107%] overflow-hidden  ">
+  <div class="inline-flex flex-col  items-center justify-start ">
+    <div class="inline-flex gap-x-12 items-start justify-between">
+      <div class="ml-4 sm:-ml-96 inline-flex flex-col gap-y-5 items-start justify-start mr-20 sm:mr-0">
+        <div class="chatBubble::before chatBubble p chatBubble px-12 pt-12 pb-20 inline-flex items-start justify-center">
+          <p class="text-lg text-white p-0 sm:p-8"style="display:inline-block;white-space:nowrap;">"We have been working with<br class="sm:hidden"> Positivus for the past year<br class="hidden sm:block"> and <br class="sm:hidden">have seen a significant increase in <br class="sm:hidden"> website traffic<br class="hidden sm:block"> and leads as a<br class="sm:hidden"> result of their efforts. The team is <br> professional, responsive, and truly <br class="sm:hidden">cares about the<br class="hidden sm:block"> success of our <br class="sm:hidden"> business. We highly recommend <br class="sm:hidden"> Positivus<br class="hidden sm:block"> to any company looking<br class="sm:hidden"> to grow their online presence."</p>
+        </div>
+        <h1 class="mr-0 sm:mr-96 text-lg mt-4" style="color:#B9FF66;">John Smith</h1><P class="mr-0 -mt-4 text-sm text-white">Marketing Director at XYZ Corp</p>
+      </div>
+      <div class="inline-flex flex-col gap-y-5 items-end justify-start">
+        <div class="chatBubble::before chatBubble p chatBubble px-12 pt-12 pb-20 inline-flex items-start justify-center">
+          <p class="text-lg text-white p-8"style="display:inline-block;white-space:nowrap;">"We have been working with Positivus for the past year <br> and have seen a significant increase in website traffic<br> and leads as a result of their efforts. The team is <br> professional, responsive, and truly cares about the <br> success of our business. We highly recommend Positivus<br> to any company looking to grow their online presence."</p>
+        </div>
+        <h1 class="mr-96 text-xl mt-4" style="color:#B9FF66;">John Smith</h1><P class="mr-52 -mt-4 text-xl text-white">Marketing Director at XYZ Corp</p>
+      </div>
+      <div class=" inline-flex flex-col gap-y-5 items-end justify-start">
+        <div class=" chatBubble::before chatBubble p chatBubble  px-12 pt-12 pb-20 inline-flex items-start justify-center">
+          <p class="text-lg text-white p-8"style="display:inline-block;white-space:nowrap;">"We have been working with Positivus for the past year <br>and have seen a significant increase in website traffic <br> and leads as a result of their efforts. The team is <br> professional, responsive, and truly cares about the <br> success of our business. We highly recommend Positivus <br> to any company looking to grow their online presence."</p>
+        </div>
+        <h1 class="mr-96 text-xl mt-4" style="color:#B9FF66;">John Smith</h1><P class="mr-52 -mt-4 text-xl text-white">Marketing Director at XYZ Corp</p>
+      </div>
+    </div>
+    <div class="mt:28 sm:mt-40 mr-96 -ml-96 sm:ml-0 pt-10 sm:pt-0" >
+      <img src="src/Assets/Navigation.png" alt="" class="-ml-56 sm:ml-0">
+    </div>
+  </div>
+</div></div>
+<!--Contact us-->
+
+<div class=" py-14 flex sm:flex-row flex-col  gap-x-10 items-start justify-start">
+  <div>
+    <div class="px-1.5 bg-lime-300 ml-20 sm:ml-0 rounded-md space-y-2.5">
+      <p class="text-4xl font-medium "style="display:inline-block;white-space:nowrap;">Contact Us</p>
+    </div>
+  </div>
+  <p class="text-lg w-80 text-center sm:text-left"style="display:inline-block;white-space:nowrap;">Connect with Us: Let's Discuss Your<br class="hidden sm:block"> Digital <br class="sm:hidden"> Marketing Needs</p>
+</div>
+<!--Name-->
+<div class=" items-center justify-start    w-[500px] sm:w-[385%] lg:w-[110%] xl:w-[107%] ">
+  <div class=" pt-16 pb-20 bg-zinc-100 rounded-3xl flex gap-x-2.5 items-start justify-start pl-20 sm:pl-10">
+    <div class="space-y-10">
+      <div class="inline-flex gap-x-9 items-start justify-start">
+        <div class="w-28 h-7 relative flex flex-row gap-x-5">
+          <div class="w-8 h-8 relative">
+            <div class="w-8 h-8 p-1.5 bg-white border rounded-full border-black">
+              <div class="w-4 h-4 p-1.5 border rounded-full border-[#B9FF66] bg-[#B9FF66]"></div>
+            </div>
+          </div>
+          <p class="text-lg">Say Hi</p>
+        </div>
+        <div class="w-40 h-8 relative flex flex-row gap-x-5">
+          <div class="w-8 h-8 bg-white border rounded-full border-black "></div>
+          <p class="text-lg">Get a Quote</p>
+        </div>
+      </div>
+      <div class="space-y-6">
+        <div class="space-y-1">
+          <p class="text-base leading-7">Name</p>
+          <input placeholder="Name" class="px-8 py-4 bg-white border rounded-2xl border-black text-lg text-zinc-500 w-80 sm:w-[180%]" />
+        </div>
+        <div class="space-y-1">
+          <p class="text-base leading-7">Email*</p>
+          <input placeholder="Email" class="px-8 py-4 bg-white border rounded-2xl border-black text-lg text-zinc-500 w-80 sm:w-[180%]" />
+        </div>
+        <div class="space-y-1">
+          <p class="text-base leading-7">Message*</p>
+          <input placeholder="Message" class="px-8 py-4 bg-white border rounded-2xl border-black text-lg text-zinc-500 h-40 w-80 sm:w-[180%] " />
+        </div>
+      </div>
+      <button class="px-9 py-5 bg-zinc-900 rounded-2xl inline-flex gap-x-2.5 items-center justify-center w-80 sm:w-[180%]">
+        <span class="text-xl leading-7 text-center text-white">Send Message</span>
+      </button>
+    </div>
+    
+  </div>
+  <div class="relative">
+    <div class="absolute bottom-0  rounded-3xl -right-80 pb-12 "><div class="Illustration inline-flex flex-col space-y-96 items-end justify-end pl-10">
+      
+      
+      <img  class=" hidden sm:block" src="src/Assets/side.png" alt="" >
+  </div></div>
+  </div>
+</div>
+
+
+
+
+<!--Black-->
+<div class="space-y-2.5 mt-20  w-[500px] sm:w-[385%] lg:w-[110%] xl:w-[107%] ">
+  <div class="px-16 pt-14 pb-12 bg-zinc-900 sm:rounded-tl-3xl sm:rounded-tr-3xl space-y-12  ">
+    <div class="space-y-16">
+      <div class=" flex-row sm:inline-flex gap-x-32 items-center justify-start">
+        <img src="src/Assets/WhiteLogo.png" alt="pim" class="pl-20 sm:pl-0">
+        <div class="flex-row sm:inline-flex gap-x-5 items-start justify-start text-center pt-6 sm:pt-0 xl:ml-20 ">
+          <p class="text-sm underline text-white">About us</p>
+          <p class="text-sm underline text-white">Services</p>
+          <p class="text-sm underline text-white">Use Cases</p>
+          <p class="text-sm underline text-white">Pricing</p>
+          <p class="text-sm underline text-white">Blog</p>
+        </div>
+        <div class="  items-start justify-start hidden sm:block xl:ml-32">
+          <img src="src/Assets/Social icons.png" alt="">
+        </div>
+      </div>
+      <div class="inline-flex gap-x-8 xl:gap-x-40 items-start justify-start">
+        <div class="space-y-7">
+          <div class="pl-32 sm:pl-0">
+            <button class="px-1.5 bg-lime-300 rounded-md space-y-2.5 j">
+              <span class="text-xl font-medium">Contact us:</span>
+            </button>
+          </div>
+          <div class="space-y-5">
+            <p class="text-lg text-white text-center sm:text-left ">Email: info@positivus.com</p>
+            <p class="text-lg text-white text-center sm:text-left">Phone: 555-567-8901</p>
+            <p class="text-lg text-white text-center sm:text-left">Address: 1234 Main StMoonstone City, Stardust State 12345</p>
+            <div class="p-8 bg-zinc-800 rounded-2xl space-y-5 sm:hidden">
+              <input placeholder="Email" class="w-72 px-6 py-5 border rounded-2xl border-white text-base leading-normal text-white" />
+              <button class="w-72 px-9 py-5 bg-lime-300 rounded-2xl inline-flex gap-x-2.5 items-start justify-center">
+                <span class="text-xl leading-7 text-center">Subscribe to news</span>
+              </button>
+            </div>
+            <img src="src/Assets/Social icons.png" alt="" class="pl-28 sm:hidden">
+          </div>
+          
+        </div>
+        <div class="hidden sm:block">
+        <div class="px-10 py-14 bg-zinc-800 rounded-2xl flex gap-x-5 items-start justify-start  ">
+          <div class="w-72 px-9 py-5 border rounded-2xl border-white flex gap-x-2.5 items-start justify-start">
+            <p class="text-lg text-white">Email</p>
+          </div>
+          <button class="px-9 py-5 bg-lime-300 rounded-2xl flex gap-x-2.5 items-start w-60">
+            <span class="text-xl leading-7 text-center">Subscribe to news</span>
+          </button>
+        </div></div>
+      </div>
+    </div>
+    <div class="space-y-12">
+      <div class="border-white border-y-2"></div>
+      <div class="flex-row sm:inline-flex  gap-x-10 items-start justify-start ">
+        <p class="text-lg leading-7 text-white text-center sm:text-left">© 2023 Positivus. All Rights Reserved.</p>
+        <p class="text-lg leading-7 underline text-white text-center sm:text-left">Privacy Policy</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+</body>
+</html>
